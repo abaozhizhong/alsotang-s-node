@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="457fdff7-7111-4442-9cdd-98df71e31544" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/d1-小爬虫/pajiandan.js" afterPath="$PROJECT_DIR$/d1-小爬虫/pajiandan.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/d1-小爬虫/异步并发.js" afterPath="$PROJECT_DIR$/d1-小爬虫/异步并发.js" />
-    </list>
+    <list default="true" id="457fdff7-7111-4442-9cdd-98df71e31544" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
