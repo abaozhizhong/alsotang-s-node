@@ -18,30 +18,29 @@ superagent.get(webUrl).end(function(err,res){
         topicUrl.push($(element).attr("href")) ;
     })
 
-    // var eq = new eventproxy();
     fun(topicUrl);
 })
 
 function fun(array){
     var eq = new eventproxy();
-    eq.after("ajax",array.length,function () {
-        console.log("done");
+    eq.after("ajax",array.length,function (obj) {
+        // console.log(obj);
     });
-    for(var i in array){
-        superagent.get(array[i]).end(function (err, res) {
-            console.log("fetch"+array[i]+"successful");
-            if(err){
-                throw  err
-            }
-            var $ = cheerio.load(res.text);
-
-                var obj = {};
-                obj.author = $(".row .author strong").html();
-                obj.text = $(".row .text p").html();
-                comments.push(obj);
-            eq.emit("ajax",res)
+    array.forEach(function(item,index){
+        superagent.get(item).end(function (res, req) {
+            $ = cheerio.load(req.text);
+            var obj = {};
+            // obj.title = $('#content > div:nth-child(3) > h1 > a');
+            obj.author = $("div.author strong")['0'].children['0'].data;
+            obj.comment = $("div.text p")['0'].children['0'].data;
+            obj.index = index;
+            if(index ==0 )
+            console.log(obj.title);
+            comments.push(obj);
+            eq.emit("ajax",obj);
+            // 这里obj就是往line26的after传的数据
         });
-    }
+    })
 }
 
 
